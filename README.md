@@ -5,7 +5,7 @@ This project uses Docker Compose to quickly stand up a Prometheus/Grafana/Node E
 # Pre-requisites
 
 * Docker 17.06 or later
-* docker-compose installed
+* docker-compose
 
 # Run it
 
@@ -21,6 +21,8 @@ You should now have 3 containers running on your host and Grafana running on htt
 ### Configure Grafana
 
 Login using admin/admin and add a Prometheus datasource pointing to http://prometheus:9090/ in proxy mode.
+
+![Prometheus Datasource Configuration](datasource_config.png?raw=true)
 
 Import Dashboards (*Menu -> Dashboard -> Import*) with these IDs:
 

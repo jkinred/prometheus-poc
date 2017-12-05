@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  node-exporter:
+    image: "prom/node-exporter"
+    networks:
+      - metrics
+
+  prometheus:
+    image: "prom/prometheus"
+    networks:
+      - metrics
+    volumes:
+      - prometheus-data:/prometheus
+    depends_on:
+      - node-exporter
+
+  grafana:
+    image: "grafana/grafana"
+    ports:
+      - "3000:3000"
+    networks:
+      - metrics
+    volumes:
+        - grafana-data:/var/lib/grafana
+    depends_on:
+      - prometheus
+
+networks:
+  metrics:
+
+volumes:
+  prometheus-data:
+  grafana-data:

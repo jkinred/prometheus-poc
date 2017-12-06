@@ -2,12 +2,12 @@ version: '3'
 
 services:
   node-exporter:
-    image: "prom/node-exporter"
+    image: "prom/node-exporter:v0.15.2"
     networks:
       - metrics
 
   prometheus:
-    image: "prom/prometheus"
+    image: "prom/prometheus:v2.0.0"
     networks:
       - metrics
     volumes:
@@ -16,7 +16,7 @@ services:
       - node-exporter
 
   grafana:
-    image: "grafana/grafana"
+    image: "grafana/grafana:4.6.2"
     ports:
       - "3000:3000"
     networks:

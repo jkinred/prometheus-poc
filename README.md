@@ -17,11 +17,7 @@ sudo docker-compose up -d
 
 You should now have 3 containers running on your host and Grafana running on http://localhost:3000/.
 
-### Configure Grafana
-
-Login using admin/admin and add a Prometheus datasource pointing to http://prometheus:9090/ in proxy mode.
-
-![Prometheus Datasource Configuration](datasource_config.png?raw=true)
+### Import Grafana Dashboards
 
 Import Dashboards (*Menu -> Dashboard -> Import*) with these IDs:
 
@@ -30,5 +26,4 @@ Import Dashboards (*Menu -> Dashboard -> Import*) with these IDs:
 
 # TODO
 
-* Automatically configure Prometheus as a datasource in Grafana
 * Automatically import the dashboards

@@ -17,13 +17,15 @@ services:
       - node-exporter
 
   grafana:
-    image: "grafana/grafana:4.6.2"
+    image: "grafana/grafana:master"
     ports:
       - "3000:3000"
     networks:
       - metrics
     volumes:
         - grafana-data:/var/lib/grafana
+        - ./grafana.ini:/etc/grafana/grafana.ini
+        - ./datasources.yml:/etc/grafana/datasources.yml
     depends_on:
       - prometheus
 

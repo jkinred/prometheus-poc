@@ -12,6 +12,7 @@ services:
       - metrics
     volumes:
       - prometheus-data:/prometheus
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
     depends_on:
       - node-exporter
 

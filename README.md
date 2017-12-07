@@ -13,7 +13,6 @@ This project uses Docker Compose to quickly stand up a Prometheus/Grafana/Node E
 git clone https://github.com/jkinred/prometheus-poc
 cd prometheus-poc
 sudo docker-compose up -d
-sudo ./setup.sh
 ```
 
 You should now have 3 containers running on your host and Grafana running on http://localhost:3000/.

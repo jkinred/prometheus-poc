@@ -25,7 +25,7 @@ services:
     volumes:
         - grafana-data:/var/lib/grafana
         - ./grafana.ini:/etc/grafana/grafana.ini
-        - ./datasources.yml:/etc/grafana/datasources.yml
+        - ./datasources.yml:/usr/share/grafana/conf/datasources/datasources.yml
     depends_on:
       - prometheus
 
